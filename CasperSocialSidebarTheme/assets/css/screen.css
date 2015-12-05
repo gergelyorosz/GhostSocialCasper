@@ -2117,6 +2117,12 @@ body:not(.post-template) .post-title {
     .nav-desktop {
       display: none;
     }
+
+    .blog-logo img {
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      border-radius: 100%;
+    }
 }
 
 .sidebar .nav.mobile {
