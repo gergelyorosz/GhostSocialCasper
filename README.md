@@ -9,15 +9,21 @@ An theme for the [Ghost](https://ghost.org/) blog engine. This theme extends the
 
 ### Adding Icons to Navigation Items
 
-By naming the links in the Navigation section of Ghost as per these names, the theme will automaitcally add the right icons next to them.
+The theme supports the following sites:
 
-![setting up the Ghost navigation links](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/ghost-setup.png)
+![social icons that the Social Sidebar Casper theme supports](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/supported-social-icons.png)
 
-Sites the theme supports - just use these names on the links
 - *Design*: behance, devinatart, dribbble
 - *Social*: facebook, foursquare, googlePlus, reddit, tumblr, twitter, tumblr
 - *Image / video / music*: flickr, instagram, picasa, spotify, soundcloud, vimeo
 - *Professional*: github, linkedin, slideshare
+
+By setting the `Label` name to match any of these names in the Navigation section of Ghost, the theme will automaitcally add the right icons next to them. E.g. if you add a navigation item with the `Label` being `facebook` and the URL being `http://facebook.com/myprofile`, then the theme will display the Facebook icon next to this link.
+
+![setting up the Ghost navigation links](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/ghost-setup.png)
+
+
+
 
 ### Changing the Profile Image in the Theme
 
