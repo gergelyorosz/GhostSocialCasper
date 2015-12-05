@@ -1,9 +1,9 @@
 # Social Sidebar Casper Theme
 
-An extension to the original [Casper theme](https://github.com/TryGhost/Casper) for the [Ghost](https://ghost.org/) blog engine. This theme:
-- Adds a **sidebar** for desktop size screens
-- Automatically adds **social icons** to the navigation links (does this for all well known sites in the Navigation list like GitHub, Linkedin. Twitter etc)
-- **Mobile optimized** meaning the sidebar is only shown on desktop resolutions, on mobile the original navigation menu with social icons is displayed
+An theme for the [Ghost](https://ghost.org/) blog engine. This theme extends the extends the default [Casper theme](https://github.com/TryGhost/Casper) and adds:
+- A **sidebar** for desktop size screens
+- **Social icons** to the navigation links (does this for all well known sites in the Navigation list like GitHub, Linkedin. Twitter etc)
+- Is **mobile optimized** meaning the sidebar is only shown on desktop resolutions, on mobile the original navigation menu with social icons is displayed
 
 ![screenshot of the Social Casper Theme](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/theme-on-multiple-screens.png)
 
@@ -47,4 +47,10 @@ Follow instructions in `default.hbs` in the `Add any other links to the sidebar,
 
 In `assets/css/screen.css` in the `15. Elusive Font` section add your own `.elusive-icon.myIcon:before` selector. The theme uses the [Elusive Icon](http://elusiveicons.com/icons/) set - adding icons that this font supports are straightforward.
 
+### License
 
+The theme is licensed under the [Apache License 2.0](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/LICENSE.txt)
+
+### Credits
+
+The theme is an extension to the orginal [Casper theme](https://github.com/TryGhost/Casper). Some modifications were inspired by the [Minimalistic Blog Theme](http://blog.rriegger.com/free-ghost-cms-template/) by [Raphael Rieger](https://github.com/rriegger)
