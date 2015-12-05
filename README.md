@@ -1,9 +1,9 @@
 # Social Sidebar Casper Theme
 
 An extension to the original [Casper theme](https://github.com/TryGhost/Casper) for the [Ghost](https://ghost.org/) blog engine. This theme:
-- Adds a *sidebar* for desktop size screens
-- Automatically adds *social icons* to the navigation links (does this for all well known sites in the Navigation list like GitHub, Linkedin. Twitter etc)
-- *Mobile optimized* meaning the sidebar is only shown on desktop resolutions, on mobile the original navigation menu with social icons is displayed
+- Adds a **sidebar** for desktop size screens
+- Automatically adds **social icons** to the navigation links (does this for all well known sites in the Navigation list like GitHub, Linkedin. Twitter etc)
+- **Mobile optimized** meaning the sidebar is only shown on desktop resolutions, on mobile the original navigation menu with social icons is displayed
 
 ![screenshot of the Social Casper Theme](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/theme-on-multiple-screens.png)
 
@@ -25,11 +25,11 @@ The theme uses the logo image in the blog to display in the sidebar. Change this
 
 ### Futher customizing the Theme 
 
-My blog at [pragmaticengineer.com]() uses a slightly modified version of the theme.
+My blog at [pragmaticengineer.com](http://pragmaticengineer.com) uses a slightly modified version of the theme.
 
 ![pragmaticengineer.com theme changes](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/pragmaticengineer-com.png)
 
-Here is how to make some of the changes I performed:
+Here is how to make some of the changes I performed. (Note that all these changes are in the [pragmaticengineer-com](https://github.com/gergelyorosz/GhostSocialCasper/tree/pragmaticengineer-com) branch.)
 
 #### Change the profile image from the blog logo to something else
 
