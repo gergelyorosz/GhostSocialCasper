@@ -1,6 +1,8 @@
 # Social Sidebar Casper Theme for Ghost
 
-An theme for the [Ghost](https://ghost.org/) blog engine. This theme extends the extends the default [Casper theme](https://github.com/TryGhost/Casper) and adds:
+An theme for the [Ghost](https://ghost.org/) blog engine. [Download the theme as a .zip](https://github.com/gergelyorosz/GhostSocialCasper/releases) from the Releases page.
+
+This theme extends the extends the default [Casper theme](https://github.com/TryGhost/Casper) and adds:
 - A **sidebar** for desktop size screens
 - **Social icons** to the navigation links (does this for all well known sites in the Navigation list like GitHub, Linkedin. Twitter etc)
 - Is **mobile optimized** - meaning the sidebar is only shown on desktop resolutions (with screen width at least 880px). On mobile and small screens the original navigation menu with social icons is displayed.
