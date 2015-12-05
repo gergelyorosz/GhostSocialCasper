@@ -61,4 +61,4 @@ The theme is licensed under the [Apache License 2.0](https://raw.githubuserconte
 
 ### Credits
 
-The theme is an extension to the orginal [Casper theme](https://github.com/TryGhost/Casper). Some modifications were inspired by the [Minimalistic Blog Theme](http://blog.rriegger.com/free-ghost-cms-template/) by [Raphael Rieger](https://github.com/rriegger)
+The theme is an extension to the orginal [Casper theme](https://github.com/TryGhost/Casper). Some modifications were inspired by the [Minimalistic Blog Theme](http://blog.rriegger.com/free-ghost-cms-template/) by [Raphael Rieger](https://github.com/rriegger).
