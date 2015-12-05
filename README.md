@@ -5,7 +5,7 @@ An extension to the original [Casper theme](https://github.com/TryGhost/Casper) 
 - Automatically adds *social icons* to the navigation links (does this for all well known sites in the Navigation list like GitHub, Linkedin. Twitter etc)
 - *Mobile optimized* meaning the sidebar is only shown on desktop resolutions, on mobile the original navigation menu with social icons is displayed
 
-![screenshot of the Social Casper Theme](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/screenshot.png)
+![screenshot of the Social Casper Theme](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/theme-on-multiple-screens.png)
 
 ### Adding Icons to Navigation Items
 
@@ -13,25 +13,11 @@ By naming the links in the Navigation section of Ghost as per these names, the t
 
 ![setting up the Ghost navigation links](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/ghost-setup.png)
 
-Sites the theme supports:
-- behance
-- devinatart
-- dribbble
-- facebook
-- foursquare
-- googlePlus
-- instagram
-- linkedin
-- picasa
-- reddit
-- slideshare
-- spotify
-- soundcloud
-- tumblr
-- twitter
-- vimeo
-- vkontakte
-- youtube
+Sites the theme supports - just use these names on the links
+- *Design*: behance, devinatart, dribbble
+- *Social*: facebook, foursquare, googlePlus, reddit, tumblr, twitter, tumblr
+- *Image / video / music*: flickr, instagram, picasa, spotify, soundcloud, vimeo
+- *Professional*: github, linkedin, slideshare
 
 ### Changing the Profile Image in the Theme
 
@@ -39,7 +25,9 @@ The theme uses the logo image in the blog to display in the sidebar. Change this
 
 ### Futher customizing the Theme 
 
-My blog at pragmaticengineer.com uses a slightly modified version of the theme. 
+My blog at [pragmaticengineer.com]() uses a slightly modified version of the theme.
+
+![pragmaticengineer.com theme changes](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/pragmaticengineer-com.png)
 
 Here is how to make some of the changes I performed:
 
