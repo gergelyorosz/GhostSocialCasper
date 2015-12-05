@@ -2194,6 +2194,10 @@ body:not(.post-template) .post-title {
   content: "\f152";
 }
 
+.elusive-icon.flickr:before, .elusive-icon.Flickr:before {
+  content: "\f162";
+}
+
 .elusive-icon.foursquare:before, .elusive-icon.Foursquare:before, .elusive-icon.FourSquare:before {
   content: "\f16c";
 }
