@@ -1,0 +1,23 @@
+<div class="nav mobile">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} elusive-icon {{label}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+    <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+</div>
+<span class="nav-cover mobile"></span>
+
+<div class="nav-desktop">
+  <ul class="sidebar-nav">
+    {{#foreach navigation}}
+        <li class="nav-desktop" role="presentation">
+          <a href="{{url absolute="true"}}" class="elusive-icon {{label}}">{{label}}</a>
+        </li>
+    {{/foreach}}
+  </ul>
+</div>
