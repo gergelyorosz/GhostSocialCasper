@@ -1,4 +1,4 @@
-# Social Sidebar Casper Theme
+# Social Sidebar Casper Theme for Ghost
 
 An theme for the [Ghost](https://ghost.org/) blog engine. This theme extends the extends the default [Casper theme](https://github.com/TryGhost/Casper) and adds:
 - A **sidebar** for desktop size screens
