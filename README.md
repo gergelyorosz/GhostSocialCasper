@@ -1,2 +1,62 @@
-# GhostSocialCasper
-An extension to the Ghost Casper theme, adding a sidebar and social navigation links
+# Social Sidebar Casper Theme
+
+An extension to the original [Casper theme](https://github.com/TryGhost/Casper) for the [Ghost](https://ghost.org/) blog engine. This theme:
+- Adds a *sidebar* for desktop size screens
+- Automatically adds *social icons* to the navigation links (does this for all well known sites in the Navigation list like GitHub, Linkedin. Twitter etc)
+- *Mobile optimized* meaning the sidebar is only shown on desktop resolutions, on mobile the original navigation menu with social icons is displayed
+
+![screenshot of the Social Casper Theme](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/screenshot.png)
+
+### Adding Icons to Navigation Items
+
+By naming the links in the Navigation section of Ghost as per these names, the theme will automaitcally add the right icons next to them.
+
+![setting up the Ghost navigation links](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/ghost-setup.png)
+
+Sites the theme supports:
+- behance
+- devinatart
+- dribbble
+- facebook
+- foursquare
+- googlePlus
+- instagram
+- linkedin
+- picasa
+- reddit
+- slideshare
+- spotify
+- soundcloud
+- tumblr
+- twitter
+- vimeo
+- vkontakte
+- youtube
+
+### Changing the Profile Image in the Theme
+
+The theme uses the logo image in the blog to display in the sidebar. Change this image to replace what is shown here. Alternatively see how to customize the theme to change the image.
+
+### Futher customizing the Theme 
+
+My blog at pragmaticengineer.com uses a slightly modified version of the theme. 
+
+Here is how to make some of the changes I performed:
+
+#### Change the profile image from the blog logo to something else
+
+Follow instructions in `default.hbs` at the section `// to display a custom image...`
+
+#### Add a title under the profile image
+
+Follow instructions in `default.hbs` at the section `// to display your name under the blog logo or profile image...`
+
+#### Add custom links or content under the navigation bar
+
+Follow instructions in `default.hbs` in the `Add any other links to the sidebar, under the navigation links here` section.
+
+#### Add / Modify a Social Icon
+
+In `assets/css/screen.css` in the `15. Elusive Font` section add your own `.elusive-icon.myIcon:before` selector. The theme uses the [Elusive Icon](http://elusiveicons.com/icons/) set - adding icons that this font supports are straightforward.
+
+
