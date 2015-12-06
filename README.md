@@ -1,6 +1,6 @@
 # Social Sidebar Casper Theme for Ghost
 
-An theme for the [Ghost](https://ghost.org/) blog engine. Check out it looks on [this blog](http://blog.pragmaticengineer.com/). Download the theme [as a .zip](https://github.com/gergelyorosz/GhostSocialCasper/releases) from the Releases page. 
+An theme for the [Ghost](https://ghost.org/) blog engine. Check out how it looks on [this blog](http://blog.pragmaticengineer.com/). Download the theme [as a .zip](https://github.com/gergelyorosz/GhostSocialCasper/releases) from the Releases page. 
 
 This theme extends the extends the default [Casper theme](https://github.com/TryGhost/Casper) and adds:
 - A **sidebar** for desktop size screens
