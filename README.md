@@ -3,11 +3,13 @@
 An theme for the [Ghost](https://ghost.org/) blog engine. Check out how it looks on [this blog](http://blog.pragmaticengineer.com/). Download the theme [as a .zip](https://github.com/gergelyorosz/GhostSocialCasper/releases) from the Releases page. 
 
 This theme extends the extends the default [Casper theme](https://github.com/TryGhost/Casper) and adds:
-- A **sidebar** for desktop size screens
+- A **sidebar** for desktop size screens*
 - **Social icons** to the navigation links (does this for all well known sites in the Navigation list like GitHub, Linkedin. Twitter etc)
 - Is **mobile optimized** - meaning the sidebar is only shown on desktop resolutions (with screen width at least 880px). On mobile and small screens the original navigation menu with social icons is displayed.
 
 ![screenshot of the Social Casper Theme](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/theme-on-multiple-screens.png)
+
+*Note: the sidebar is displayed on the index, post and page subpages. For the author and tag pages no sidebar is displayed.
 
 ### Adding Icons to Navigation Items
 
@@ -25,8 +27,6 @@ By setting the `Label` name to match any of these names in the Navigation sectio
 ![setting up the Ghost navigation links](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/ghost-setup.png)
 
 
-
-
 ### Changing the Profile Image in the Theme
 
 The theme uses the logo image in the blog to display in the sidebar. Change this image to replace what is shown here. Alternatively see how to customize the theme to change the image.
@@ -39,17 +39,19 @@ My blog at [pragmaticengineer.com](http://pragmaticengineer.com) uses a slightly
 
 Here is how to make some of the changes I performed. (Note that all these changes are in the [pragmaticengineer-com](https://github.com/gergelyorosz/GhostSocialCasper/tree/pragmaticengineer-com) branch.)
 
+To make layout changes on the index page, posts and page type subpages, you need to manually make the same changes on all three places: `index.hbs`, `posts.hbs` and `page.hbs`. 
+
 #### Change the profile image from the blog logo to something else
 
-Follow instructions in `default.hbs` at the section `// to display a custom image...`
+Follow instructions in `index.hbs`, `posts.hbs` and `page.hbs` at the section `// to display a custom image...`.
 
 #### Add a title under the profile image
 
-Follow instructions in `default.hbs` at the section `// to display your name under the blog logo or profile image...`
+Follow instructions in `index.hbs`, `posts.hbs` and `page.hbs` at the section `// to display your name under the blog logo or profile image...`
 
 #### Add custom links or content under the navigation bar
 
-Follow instructions in `default.hbs` in the `Add any other links to the sidebar, under the navigation links here` section.
+Follow instructions in `index.hbs`, `posts.hbs` and `page.hbs` in the `Add any other links to the sidebar, under the navigation links here` section.
 
 #### Add / Modify a Social Icon
 
