@@ -2048,6 +2048,11 @@ body:not(.post-template) .post-title {
   float: right;
 }
 
+body.author-template .content {
+  /* on the author page the sidebar is not displayed. Show full content width here. */
+  width:100%;
+}
+
 .sidebar {
   width: 20%;
   float: left;
@@ -2135,6 +2140,10 @@ body:not(.post-template) .post-title {
 
 .poweredby, .copyright {
     display: block;
+}
+
+aside.read-next {
+  clear:both; /* make sure the "read next" suggestions are shown */
 }
 
 /* ==========================================================================
