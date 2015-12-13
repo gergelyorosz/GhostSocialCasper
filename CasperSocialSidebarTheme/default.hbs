@@ -29,30 +29,6 @@
 
         {{! Everything else gets inserted here }}
         {{{body}}}
-
-        <aside class="sidebar">
-          <img class="profile-image" src="{{@blog.logo}}" alt="" />
-          <!--
-          // to display a custom image, copy the image into assets/img/profile-img.png and replace the previous line with this:
-          <img class="profile-image" src="{{asset "img/profile-image.png"}}" alt="" />
-          -->
-
-          <section class="publisher">by <strong>Gergely Orosz</strong></section>
-
-          {{navigation}}
-
-            <ul>
-              <li><a href="http://feeds.feedburner.com/ThePragmaticEngineer" class="elusive-icon rss">Subscribe in a reader</a></li>
-              <li><a href="http://feedburner.google.com/fb/a/mailverify?uri=ThePragmaticEngineer&amp;loc=en_US" class="elusive-icon email">Subscribe via email</a></li>
-            </ul>
-
-
-          <footer class="site-footer clearfix">
-              <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-              <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
-          </footer>
-
-        </aside>
     </div>
 
     {{! Ghost outputs important scripts and data with this tag }}

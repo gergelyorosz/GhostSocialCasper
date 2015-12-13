@@ -25,3 +25,37 @@
     {{> "loop"}}
 
 </main>
+
+<aside class="sidebar">
+  <img class="profile-image" src="{{@blog.logo}}" alt="" />
+  <!--
+  // to display a custom image, copy the image into assets/img/profile-img.png and replace the previous line with this:
+  <img class="profile-image" src="{{asset "img/profile-image.png"}}" alt="" />
+  -->
+
+  <!--
+  // to display your name under the blog logo or profile image, uncomment this line:
+  <section class="publisher">by <strong>Gergely Orosz</strong></section>
+  -->
+
+  {{navigation}}
+
+  <!--
+  // Add any other links to the sidebar, under the navigation links here.
+  // For example to allow subscribing to your blog via Feedburner and email:
+    1. register it at feedburner.com and
+    2. change the below links to point to your blog
+    3. uncomment these lines:
+
+    <ul>
+      <li><a href="http://feeds.feedburner.com/ThePragmaticEngineer" class="elusive-icon rss">Subscribe in a reader</a></li>
+      <li><a href="http://feedburner.google.com/fb/a/mailverify?uri=ThePragmaticEngineer&amp;loc=en_US" class="elusive-icon email">Subscribe via email</a></li>
+    </ul>
+   -->
+
+  <footer class="site-footer clearfix">
+      <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+      <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+  </footer>
+
+</aside>
