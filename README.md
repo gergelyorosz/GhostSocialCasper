@@ -5,6 +5,7 @@ An theme for the [Ghost](https://ghost.org/) blog engine. Check out how it looks
 This theme extends the extends the default [Casper theme](https://github.com/TryGhost/Casper) and adds:
 - A **sidebar** for desktop size screens*
 - **Social icons** to the navigation links (does this for all well known sites in the Navigation list like GitHub, Linkedin. Twitter etc)
+- **Disqus comments** at the bottom of every post (see [instructions](#configuring-disqus-comments) on configuring this)
 - Is **mobile optimized** - meaning the sidebar is only shown on desktop resolutions (with screen width at least 880px). On mobile and small screens the original navigation menu with social icons is displayed.
 
 ![screenshot of the Social Casper Theme](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/theme-on-multiple-screens.png)
@@ -26,6 +27,11 @@ By setting the `Label` name to match any of these names in the Navigation sectio
 
 ![setting up the Ghost navigation links](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/ghost-setup.png)
 
+### Configuring Disqus Comments
+
+- To add Disqus comments to your site, you will first need to [register to Disqus](https://disqus.com/register).
+- Then in `post.hbs` after the `<!-- Disqus START-->` section, change the `var disqus_shortname = 'example';` line to your blog's identifier, as explained in [these instructions](https://help.disqus.com/customer/portal/articles/1454924-ghost-installation-instructions).
+- To disable Disqus comments, simply delete the lines in `post.hbs` between `<!-- Disqus START-->` and `<!-- Disqus END-->`
 
 ### Changing the Profile Image in the Theme
 
