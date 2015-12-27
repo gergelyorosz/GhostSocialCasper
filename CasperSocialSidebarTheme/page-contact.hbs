@@ -1,0 +1,163 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+
+<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
+        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+        {{#if @blog.navigation}}
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        {{/if}}
+    </nav>
+</header>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<main class="content" role="main">
+  <article class="{{post_class}}">
+    <header class="post-header">
+      <h1 class="post-title">{{title}}</h1>
+    </header>
+
+    <section class="post-content">
+      <div class="alert alert-success" role="alert" id="contact-success" style="display:none">Message sent. Thanks!</div>
+      <div class="alert alert-danger" role="alert" id="contact-error" style="display:none">An error occurred when sending the message.</div>
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+        <span class="sr-only">45% Complete</span>
+      </div>
+
+      <form id="contact-us-form" data-toggle="validator" role="form">
+        <div class="form-group">
+          <div class="input-group input-group-lg name">
+            <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" id="contact-name" class="form-control" placeholder="Name" data-error="Please enter your name." aria-describedby="sizing-addon2" required>
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+          <div class="input-group input-group-lg email">
+            <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-envelope"></span></span>
+            <input type="email" id="contact-email" class="form-control" placeholder="Email" data-error="Email address is invalid." aria-describedby="sizing-addon2" required>
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+          <div id="contact-us-message" class="input-group-lg message">
+            <textarea id="contact-message" class="form-control" placeholder="Enter a message" data-error="Please enter a message" rows="4" required style="height:100px"></textarea>
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+        <button id="contact-us-send-message" type="submit" onsubmit="return false;" class="btn btn-custom orange-button">
+          <span class="glyphicon glyphicon-send" aria-hidden="true" id="contact-send-icon"></span>
+          <span class="no-pointer-events contact-us-button-text">SEND MESSAGE</span>
+        </button>
+      </form>
+    </section>
+  </article>
+</main>
+
+<aside class="sidebar">
+  <img class="profile-image" src="{{@blog.logo}}" alt="" />
+  <!--
+  // to display a custom image, copy the image into assets/img/profile-img.png and replace the previous line with this:
+  <img class="profile-image" src="{{asset "img/profile-image.png"}}" alt="" />
+  -->
+
+  <!--
+  // to display your name under the blog logo or profile image, uncomment this line:
+  <section class="publisher">by <strong>Gergely Orosz</strong></section>
+  -->
+
+  {{navigation}}
+
+  <!--
+  // Add any other links to the sidebar, under the navigation links here.
+  // For example to allow subscribing to your blog via Feedburner and email:
+    1. register it at feedburner.com and
+    2. change the below links to point to your blog
+    3. uncomment these lines:
+
+    <ul>
+      <li><a href="http://feeds.feedburner.com/ThePragmaticEngineer" class="elusive-icon rss">Subscribe in a reader</a></li>
+      <li><a href="http://feedburner.google.com/fb/a/mailverify?uri=ThePragmaticEngineer&amp;loc=en_US" class="elusive-icon email">Subscribe via email</a></li>
+    </ul>
+   -->
+
+  <footer class="site-footer clearfix">
+      <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+      <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+  </footer>
+
+</aside>
+
+<!-- Bootstrap with 1000Hz Twitter Bootstrap Validator plugin -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{asset "js/validator.min.js"}}"></script>
+
+<!-- Javascript for posting the contact form to the backend that sends out an email -->
+<script>
+$(window).on('load', function () {
+  $('#contact-us-form').on('submit', function (e) {
+    if (e.isDefaultPrevented()) {
+      // The form is invalid, do nothing
+    } else {
+      postContactForm();
+      e.preventDefault();
+    }
+  })
+})
+
+function postContactForm() {
+  var contactSendMailUrl = "http://gergelyorosz.com/ghost/ghostContactSendMail.php";
+  var contactParameters = {
+    senderName: $("#contact-name").val(),
+    senderEmail: $("#contact-email").val(),
+    message: $("#contact-message").val()
+  };
+  $("#contact-send-icon").removeClass("glyphicon-send");
+  $("#contact-send-icon").addClass("glyphicon-refresh spinning");
+  $("#contact-success").hide();
+  $("#contact-error").hide();
+  $.ajax({
+        url: contactSendMailUrl,
+        type: 'POST',
+        data: contactParameters,
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        success: function (response) {
+          $("#contact-us-form").hide();
+          $("#contact-success").show();
+        },
+        error: function () {
+          $("#contact-error").show();
+          $("#contact-send-icon").addClass("glyphicon-send");
+          $("#contact-send-icon").removeClass("glyphicon-refresh spinning");
+        }
+    });
+}
+
+</script>
+
+<!-- Custom spinning icon for "Send" button -->
+<style>
+.glyphicon.spinning {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+</style>
+
+{{/post}}
