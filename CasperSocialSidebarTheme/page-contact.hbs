@@ -113,7 +113,8 @@ $(window).on('load', function () {
 })
 
 function postContactForm() {
-  var contactSendMailUrl = "http://gergelyorosz.com/ghost/ghostContactSendMail.php";
+  // To use the contact form, set this URL to a backend service that sends emails to your contact address
+  var contactSendMailUrl = "http://example.com/ghostContactSendMail.php";
   var contactParameters = {
     senderName: $("#contact-name").val(),
     senderEmail: $("#contact-email").val(),
