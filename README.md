@@ -43,7 +43,12 @@ By setting the `Label` name to match any of these names in the Navigation sectio
 - A backend component needs to be added to send out emails. While [it is possible](https://medium.com/@mariusc23/send-an-email-using-only-javascript-b53319616782) to send emails via Javascript using REST calls, I wouldn't recommend it. The component I'm using is a PHP script - see [ghostContactSendMail.php](https://github.com/gergelyorosz/GhostSocialCasper/blob/master/ServerComponents/ghostContactSendMail.php)
 - To enable the contact form, create a static page called Contact, and make sure its URL is `/contact`... and that's it!
 - The contact page uses [Bootstrap](http://getbootstrap.com/) to render the form, and the [1000Hz validator plugin](http://1000hz.github.io/bootstrap-validator/)
-- All logic for the contact form is in `page-contact.hbs`
+- To configure the contact form, in `page-contact.hbs` update this line to point to a backend service that handles sending emails to your contact email address:
+```
+// To use the contact form, set this URL to a backend service that sends emails to your contact address
+  var contactSendMailUrl = "http://example.com/ghostContactSendMail.php";
+```
+- All logic for the contact form is in `page-contact.hbs`, you can customize behaviour further in this file.
 - As a small touch when submitting the field, the "send" button turns into this spinner. After submission success or error messages are shown:
 
 ![Bootstrap spinning loading button](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/spinning-send-message.gif)
