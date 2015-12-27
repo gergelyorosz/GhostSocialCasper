@@ -1,11 +1,12 @@
-# Social Sidebar Casper Theme for Ghost
+# Social Sidebar Casper Theme for Ghost with Comments and Contact Form
 
 An theme for the [Ghost](https://ghost.org/) blog engine. Check out how it looks on [this blog](http://blog.pragmaticengineer.com/). Download the theme [as a .zip](https://github.com/gergelyorosz/GhostSocialCasper/releases) from the Releases page. 
 
 This theme extends the extends the default [Casper theme](https://github.com/TryGhost/Casper) and adds:
 - A **sidebar** for desktop size screens*
 - **Social icons** to the navigation links (does this for all well known sites in the Navigation list like GitHub, Linkedin. Twitter etc)
-- **Disqus comments** at the bottom of every post (see [instructions](#configuring-disqus-comments) on configuring this)
+- **Disqus comments** at the bottom of every post (see [instructions](#disqus-comments) on configuring this)
+- A **contact form** with field validation that allows sending out emails (see [instructions](#contact-page) on configuring this)
 - Is **mobile optimized** - meaning the sidebar is only shown on desktop resolutions (with screen width at least 880px). On mobile and small screens the original navigation menu with social icons is displayed.
 
 ![screenshot of the Social Casper Theme](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/theme-on-multiple-screens.png)
@@ -27,11 +28,26 @@ By setting the `Label` name to match any of these names in the Navigation sectio
 
 ![setting up the Ghost navigation links](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/ghost-setup.png)
 
-### Configuring Disqus Comments
+### Disqus Comments
+
+![Disqus comments with the Ghost theme](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/disqus-screenshot.png)
 
 - To add Disqus comments to your site, you will first need to [register to Disqus](https://disqus.com/register).
 - Then in `post.hbs` after the `<!-- Disqus START-->` section, change the `var disqus_shortname = 'example';` line to your blog's identifier, as explained in [these instructions](https://help.disqus.com/customer/portal/articles/1454924-ghost-installation-instructions).
 - To disable Disqus comments, simply delete the lines in `post.hbs` between `<!-- Disqus START-->` and `<!-- Disqus END-->`
+
+### Contact Page
+
+![Ghost contact form using Bootstrap and field validation](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/contact-form.gif)
+
+- A backend component needs to be added to send out emails. While [it is possible](https://medium.com/@mariusc23/send-an-email-using-only-javascript-b53319616782) to send emails via Javascript using REST calls, I wouldn't recommend it. The component I'm using is a PHP script - see [ghostContactSendMail.php](https://github.com/gergelyorosz/GhostSocialCasper/blob/master/ServerComponents/ghostContactSendMail.php)
+- To enable the contact form, create a static page called Contact, and make sure its URL is `/contact`... and that's it!
+- The contact page uses [Bootstrap](http://getbootstrap.com/) to render the form, and the [1000Hz validator plugin](http://1000hz.github.io/bootstrap-validator/)
+- All logic for the contact form is in `page-contact.hbs`
+- As a small touch when submitting the field, the "send" button turns into this spinner. After submission success or error messages are shown:
+
+![Bootstrap spinning loading button](https://raw.githubusercontent.com/gergelyorosz/GhostSocialCasper/master/github-images/spinning-send-message.gif)
+
 
 ### Changing the Profile Image in the Theme
 
