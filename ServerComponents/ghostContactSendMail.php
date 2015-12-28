@@ -11,7 +11,7 @@ Invoke via GET or POST, passing the senderName, senderEmail and message paramete
 === Setup ===
 Set the $to variable to the email address for the contact form to mail to
 */
-$to      = "yourEmail@example.com";
+$to      = "gergely.orosz@gmail.com";
 
 header("Access-Control-Allow-Origin: *");
 if(empty($_REQUEST["senderName"]) || empty($_REQUEST["senderEmail"]) || empty($_REQUEST["message"])) {

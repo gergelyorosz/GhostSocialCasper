@@ -2286,3 +2286,14 @@ aside.read-next {
 .read-next-story .post {
   margin-bottom: 0;
 }
+
+/* Tech Inspiracio customization */
+
+.profile-image {
+    width:70px;
+}
+
+.post {
+    width: 100%;
+    margin: 1rem auto;
+}
