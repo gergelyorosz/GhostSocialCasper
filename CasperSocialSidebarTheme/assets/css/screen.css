@@ -121,8 +121,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 @font-face {
   font-family: 'merriweather-font';
-  src: url('../fonts/Merriweather-Regular.ttf?v=3');
-  src: url('../fonts/Merriweather-Regular.ttf?v=3') format('truetype');
+  src: url('../fonts/Merriweather-Light.ttf?v=3');
+  src: url('../fonts/Merriweather-Light.ttf?v=3') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
