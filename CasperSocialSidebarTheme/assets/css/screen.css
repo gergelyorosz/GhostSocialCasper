@@ -2322,3 +2322,31 @@ aside.read-next {
     width: 100%;
     margin: 1rem auto;
 }
+
+.post section {
+  padding-top:8px;
+}
+
+.post section .tags {
+  float:left;
+}
+
+.post section time {
+  float:right;
+  color: rgba(158, 171, 179, 0.46);
+}
+
+.post-meta a {
+  text-decoration: underline;
+}
+
+.post .newsletterAdvertisementBox {
+  background-color: #EBF2F6;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  padding: 16px;
+}
+
+.post .newsletterAdvertisementBox .nextWeek {
+  font-size: 1.8rem;
+}
