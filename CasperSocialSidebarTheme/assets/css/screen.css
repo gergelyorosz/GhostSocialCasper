@@ -2350,3 +2350,7 @@ aside.read-next {
 .post .newsletterAdvertisementBox .nextWeek {
   font-size: 1.8rem;
 }
+
+.site-footer {
+  padding-left: 0px;
+}
