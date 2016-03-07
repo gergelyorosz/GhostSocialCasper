@@ -23,36 +23,36 @@
     </header>
 
     <section class="post-content">
-      <div class="alert alert-success" role="alert" id="contact-success" style="display:none">Message sent. Thanks!</div>
-      <div class="alert alert-danger" role="alert" id="contact-error" style="display:none">An error occurred when sending the message.</div>
+      <div class="alert alert-success" role="alert" id="contact-success" style="display:none">Az üzenet elküldve. Köszönjük!</div>
+      <div class="alert alert-danger" role="alert" id="contact-error" style="display:none">Hiba történt az üzelet küldésekor. Kérlek, küldj emailt a hello (kukac) techinspiracio (pont) hu címre.</div>
       <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-        <span class="sr-only">45% Complete</span>
+        <span class="sr-only"></span>
       </div>
 
       <form id="contact-us-form" data-toggle="validator" role="form">
         <div class="form-group">
           <div class="input-group input-group-lg name">
             <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-user"></span></span>
-            <input type="text" id="contact-name" class="form-control" placeholder="Name" data-error="Please enter your name." aria-describedby="sizing-addon2" required>
+            <input type="text" id="contact-name" class="form-control" placeholder="Név" data-error="Kérlek, töltsd ki a neved" aria-describedby="sizing-addon2" required>
           </div>
           <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <div class="input-group input-group-lg email">
             <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-envelope"></span></span>
-            <input type="email" id="contact-email" class="form-control" placeholder="Email" data-error="Email address is invalid." aria-describedby="sizing-addon2" required>
+            <input type="email" id="contact-email" class="form-control" placeholder="Email" data-error="Kérlek, adj meg érvényes email címet, ahol válaszolhatunk" aria-describedby="sizing-addon2" required>
           </div>
           <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <div id="contact-us-message" class="input-group-lg message">
-            <textarea id="contact-message" class="form-control" placeholder="Enter a message" data-error="Please enter a message" rows="4" required style="height:100px"></textarea>
+            <textarea id="contact-message" class="form-control" placeholder="Üzenet" data-error="Kérlek, töltsd ki az üzenetet" rows="4" required style="height:100px"></textarea>
           </div>
           <div class="help-block with-errors"></div>
         </div>
         <button id="contact-us-send-message" type="submit" onsubmit="return false;" class="btn btn-custom orange-button">
           <span class="glyphicon glyphicon-send" aria-hidden="true" id="contact-send-icon"></span>
-          <span class="no-pointer-events contact-us-button-text">SEND MESSAGE</span>
+          <span class="no-pointer-events contact-us-button-text">KÜLDÉS</span>
         </button>
       </form>
     </section>
@@ -115,7 +115,7 @@ $(window).on('load', function () {
 
 function postContactForm() {
   // To use the contact form, set this URL to a backend service that sends emails to your contact address
-  var contactSendMailUrl = "http://gergelyorosz.com/ghost/ghostContactSendMail.php?siteName=hungarianNotation";
+  var contactSendMailUrl = "http://gergelyorosz.com/ghost/ghostContactSendMail.php?siteName=TechInspiracio";
   var contactParameters = {
     senderName: $("#contact-name").val(),
     senderEmail: $("#contact-email").val(),
