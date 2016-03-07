@@ -1,0 +1,103 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+
+<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
+        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+        {{#if @blog.navigation}}
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        {{/if}}
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="{{post_class}}">
+
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+        </header>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+
+        <!-- Begin MailChimp Signup Form -->
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+        	#mc_embed_signup{background:#fff; clear:left; font:14px; }
+        	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+        	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        </style>
+        <div id="mc_embed_signup">
+        <form action="//ghost.us12.list-manage.com/subscribe/post?u=c41c857817d6f6422e772b12e&amp;id=38f675f750" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate style="padding:0px">
+            <div id="mc_embed_signup_scroll">
+            <div class="mc-field-group">
+            	<label for="mce-EMAIL">Email  <span class="asterisk" style="top:35px; font-size:100%">*</span>
+            </label>
+            	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+            </div>
+            <div class="mc-field-group">
+            	<label for="mce-NAME">Név </label>
+            	<input type="text" value="" name="NAME" class="" id="mce-NAME">
+            </div>
+            <div class="mc-field-group">
+            	<label for="mce-ABOUT">Pár szó magadról </label>
+            	<textarea value="" name="ABOUT" class="" id="mce-ABOUT" style="width:100%"></textarea>
+            </div>
+          	<div id="mce-responses" class="clear">
+          		<div class="response" id="mce-error-response" style="display:none"></div>
+          		<div class="response" id="mce-success-response" style="display:none"></div>
+          	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c41c857817d6f6422e772b12e_38f675f750" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Feliratkozás" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+            <!--<p>Olvasd el a <a href="http://us12.campaign-archive1.com/home/?u=c41c857817d6f6422e772b12e&id=38f675f750" title="View previous campaigns">korábbi hírleveleket</a>.</p>-->
+        </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+
+    </article>
+</main>
+
+<aside class="sidebar">
+  <img class="profile-image" src="{{@blog.logo}}" alt="" />
+  <!--
+  // to display a custom image, copy the image into assets/img/profile-img.png and replace the previous line with this:
+  <img class="profile-image" src="{{asset "img/profile-image.png"}}" alt="" />
+  -->
+
+  <!--
+  // to display your name under the blog logo or profile image, uncomment this line:
+  <section class="publisher">by <strong>Gergely Orosz</strong></section>
+  -->
+
+  {{navigation}}
+
+  <!--
+  // Add any other links to the sidebar, under the navigation links here.
+  // For example to allow subscribing to your blog via Feedburner and email:
+    1. register it at feedburner.com and
+    2. change the below links to point to your blog
+    3. uncomment these lines:
+
+    <ul>
+      <li><a href="http://feeds.feedburner.com/ThePragmaticEngineer" class="elusive-icon rss">Subscribe in a reader</a></li>
+      <li><a href="http://feedburner.google.com/fb/a/mailverify?uri=ThePragmaticEngineer&amp;loc=en_US" class="elusive-icon email">Subscribe via email</a></li>
+    </ul>
+   -->
+
+   <footer class="site-footer clearfix">
+     <section class="copyright">
+       <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/hu/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/2.5/80x15.png"></a><br>A <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">{{@blog.title}}</span> cikkei a <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/hu">Creative Commons Nevezd Meg! - Így Add Tovább!</a> licensz alapján oszthatóak meg.
+     </section>
+   </footer>
+
+</aside>
+
+{{/post}}

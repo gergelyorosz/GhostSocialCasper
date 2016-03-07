@@ -1,0 +1,157 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
+        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+        {{#if @blog.navigation}}
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        {{/if}}
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="{{post_class}}">
+
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+            <section class="post-meta">
+                <div class="tags">{{tags prefix=""}}</div>
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY MMM DD"}}</time>
+            </section>
+        </header>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+
+        <footer class="post-footer">
+
+        {{! Everything inside the #author tags pulls data from the author }}
+        {{#author}}
+
+            {{#if image}}
+            <figure class="author-image">
+                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+            </figure>
+            {{/if}}
+
+            <section class="author">
+                <h4><a href="{{url}}">{{name}}</a></h4>
+
+                {{#if bio}}
+                    <p>{{bio}}</p>
+                {{else}}
+                    <p><a href="{{url}}">További bejegyzések</a> a szerzőtől</p>
+                {{/if}}
+                <div class="author-meta">
+                    {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                </div>
+            </section>
+
+        {{/author}}
+
+            <section class="share">
+                <h4>Oszd meg ezt az írást</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+            <section class="newsletterAdvertisementBox">
+              <div>Hetente egy új, inspiráló és érdekes sztorival jelentkezünk a szoftverfejlesztés világából.</div>
+              <div class="nextWeek"><strong>Következik</strong>: 400 millió, Skypeot használó embernek rolloutoltam egy új architektúrát.</div>
+              <div><a href="/hirlevel">Iratkozz fel a hírlevélünkre</a>, és értesítünk az új szorikról.</div>
+            </section>
+        </footer>
+
+        <!-- Disqus START-->
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            // to display your disqus page, replace disqus_shortname with your blog's disqus identifier
+            var disqus_shortname = 'techinspiracio';
+            var disqus_identifier = '{{post.id}}';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">A kommenteket a <span class="logo-disqus">Disqus</span> jeleníti meg</a>
+        <!-- Disqus END-->
+    </article>
+</main>
+
+<aside class="sidebar">
+  <img class="profile-image" src="{{@blog.logo}}" alt="" />
+  <!--
+  // to display a custom image, copy the image into assets/img/profile-img.png and replace the previous line with this:
+  <img class="profile-image" src="{{asset "img/profile-image.png"}}" alt="" />
+  -->
+
+  <!--
+  // to display your name under the blog logo or profile image, uncomment this line:
+  <section class="publisher">by <strong>Gergely Orosz</strong></section>
+  -->
+
+  {{navigation}}
+
+  <!--
+  // Add any other links to the sidebar, under the navigation links here.
+  // For example to allow subscribing to your blog via Feedburner and email:
+    1. register it at feedburner.com and
+    2. change the below links to point to your blog
+    3. uncomment these lines:
+
+    <ul>
+      <li><a href="http://feeds.feedburner.com/ThePragmaticEngineer" class="elusive-icon rss">Subscribe in a reader</a></li>
+      <li><a href="http://feedburner.google.com/fb/a/mailverify?uri=ThePragmaticEngineer&amp;loc=en_US" class="elusive-icon email">Subscribe via email</a></li>
+    </ul>
+   -->
+
+   <footer class="site-footer clearfix">
+     <section class="copyright">
+       <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/hu/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/2.5/80x15.png"></a><br>A <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">{{@blog.title}}</span> cikkei a <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/hu">Creative Commons Nevezd Meg! - Így Add Tovább!</a> licensz alapján oszthatóak meg.
+     </section>
+   </footer>
+
+</aside>
+
+<aside class="read-next">
+    {{#next_post}}
+    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+        <section class="post">
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="19"}}&hellip;</p>
+        </section>
+    </a>
+    {{/next_post}}
+    {{#prev_post}}
+    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+        <section class="post">
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="19"}}&hellip;</p>
+        </section>
+    </a>
+    {{/prev_post}}
+</aside>
+
+{{/post}}
